@@ -35,20 +35,33 @@
         const apiUrl = 'http://localhost:3000/mangas';
 
         function addManga() {
-    const nome = document.getElementById('nome').value;
+    const nomeInput = document.getElementById('nome');
+    const nome = nomeInput.value.trim();
     const precoInput = document.getElementById('preco');
-    let preco = precoInput.value;
+    let preco = precoInput.value.trim();
 
-    
-    if (!/^\d+$/.test(preco)) {
+    // Verificar se o campo nome está preenchido
+    if (nome === '') {
+        alert('Por favor, preencha o nome do mangá.');
+        return;
+    }
+
+    // Verificar se o preço contém apenas números e vírgula
+    if (!/^[\d,]+$/.test(preco)) {
         alert('Por favor, insira um valor numérico para o preço.');
         return;
     }
 
-    
+    // Formatando o preço
     preco = formatarPreco(preco);
 
-    const img = document.getElementById('img').value;
+    const img = document.getElementById('img').value.trim();
+
+    // Validar a URL da imagem
+    if (!isValidURL(img)) {
+        alert('URL de imagem inválida.');
+        return;
+    }
 
     const manga = {
         title: nome,
@@ -70,27 +83,28 @@
     })
     .catch(error => console.error('Erro:', error));
 
-    
+    // Limpar campos após envio
+    nomeInput.value = '';
     precoInput.value = '';
 }
 
 function formatarPreco(preco) {
-    
-    preco = preco.toString();
-
-    
-    if (preco.length >= 2) {
-        
-        preco = preco.slice(0, -2) + ',' + preco.slice(-2);
-    } else {
-        
-        preco = '0,' + (preco.length === 1 ? '0' + preco : preco.padStart(2, '0'));
-    }
-
+    preco = preco.replace(',', '.'); 
+    preco = parseFloat(preco).toFixed(2); 
+    preco = preco.toString().replace('.', ','); 
     return preco;
 }
 
-        function getMangas() {
+function isValidURL(url) {
+    try {
+        new URL(url); 
+        return true;
+    } catch (error) {
+        return false;
+    }
+}
+
+function getMangas() {
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
@@ -113,26 +127,24 @@ function formatarPreco(preco) {
         .catch(error => console.error('Erro:', error));
 }
 
-        function removeManga(id) {
-            fetch(`${apiUrl}/${id}`, {
-                method: 'DELETE'
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log(`Mangá com ID ${id} removido.`);
-                    getMangas(); 
-                } else {
-                    console.error('Erro ao remover mangá.');
-                }
-            })
-            .catch(error => console.error('Erro:', error));
+function removeManga(id) {
+    fetch(`${apiUrl}/${id}`, {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log(`Mangá com ID ${id} removido.`);
+            getMangas(); 
+        } else {
+            console.error('Erro ao remover mangá.');
         }
+    })
+    .catch(error => console.error('Erro:', error));
+}
 
-        
-        document.addEventListener('DOMContentLoaded', getMangas);
+document.addEventListener('DOMContentLoaded', getMangas);
     </script>
-
-    <footer><h1>AluraGeek</h1>
+     <footer><h1>AluraGeek</h1>
         <p>Desenvolvido por Vitor Ketzer</p> 
         <p>Alura LATAM 2024</p>
     </footer>
