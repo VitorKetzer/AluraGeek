@@ -40,24 +40,24 @@
     const precoInput = document.getElementById('preco');
     let preco = precoInput.value.trim();
 
-    
+    // Verificar se o campo nome está preenchido
     if (nome === '') {
         alert('Por favor, preencha o nome do mangá.');
         return;
     }
 
-    
+    // Verificar se o preço contém apenas números e vírgula
     if (!/^[\d,]+$/.test(preco)) {
         alert('Por favor, insira um valor numérico para o preço.');
         return;
     }
 
-    
+    // Formatando o preço
     preco = formatarPreco(preco);
 
     const img = document.getElementById('img').value.trim();
 
-    
+    // Validar a URL da imagem
     if (!isValidURL(img)) {
         alert('URL de imagem inválida.');
         return;
@@ -83,15 +83,24 @@
     })
     .catch(error => console.error('Erro:', error));
 
-    // Limpar campos após envio
+    
     nomeInput.value = '';
     precoInput.value = '';
 }
 
 function formatarPreco(preco) {
-    preco = preco.replace(',', '.'); 
+    preco = preco.trim().replace('.', ','); 
     preco = parseFloat(preco).toFixed(2); 
-    preco = preco.toString().replace('.', ','); 
+
+    
+    if (preco === '0.00') {
+        alert('Por favor, insira um valor maior que zero para o preço.');
+        return '';
+    }
+
+    
+    preco = 'R$ ' + preco.replace('.', ',');
+
     return preco;
 }
 
