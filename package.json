@@ -1,11 +1,10 @@
-{
-  "name": "alurageek",
+"name": "alurageek",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Projeto AluraGeek",
+  "main": "index.html", 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vitor",
-  "license": "ISC",
-  "description": ""
+  "license": "ISC"
 }
