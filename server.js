@@ -6,6 +6,9 @@ const server = express();
 const router = jsonServer.router(path.join(__dirname, 'db.json'));
 const middlewares = jsonServer.defaults();
 
+// Servir arquivos estáticos a partir do diretório 'public'
+server.use(express.static('public'));
+
 server.use(middlewares);
 server.use(router);
 
