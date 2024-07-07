@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="custom.css" media="screen" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <title>GEEK</title>
+</head>
+<body>
+    <header>
+        <h1>ALURA-DATTEBAYO</h1>
+    </header>
+
+    <main>
+        <section class="section1">
+            <h1>Mangás</h1>
+            <ul id="manga-list"></ul>
+        </section>
+
+        <section class="section2">
+            <form id="manga-form">
+                <h2>Poste seu mangá</h2>
+                <input id="nome" name="nome" type="text" placeholder="nome..." required minlength="3" maxlength="80">
+                <input id="preco" name="preco" type="text" placeholder="preço..." required minlength="2" maxlength="7">
+                <input id="img" name="img" type="text" placeholder="imagem..." required minlength="10" maxlength="100">
+                <button type="button" id="enviar-btn">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <h1>AluraGeek</h1>
+        <p>Desenvolvido por Vitor Ketzer</p>
+        <p>Alura LATAM 2024</p>
+    </footer>
+    <script src='script.js'></script>
+</body>
+</html>
