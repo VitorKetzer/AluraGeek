@@ -1,4 +1,4 @@
-const apiUrl = 'https://alura-geek-ten-lovat.vercel.app/mangas';
+const apiUrl = 'https://alura-geek-swart-mu.vercel.app/mangas';
 
 
 function formatPrice(preco) {
