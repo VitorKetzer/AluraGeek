@@ -1,0 +1,179 @@
+*{
+    padding: 0;
+    margin: 0 auto;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+      
+                         
+}
+
+:root {
+    --cor-primaria: rgb(51, 218, 126); 
+}
+
+header {
+    width: 100%;
+    max-width: 100%;
+    height: 20%; 
+    display: inline-flex;
+    margin-top: 0;
+    background-color: var(--cor-primaria);
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: white;
+}
+
+header h1 {
+    font-size: 60px;
+}
+
+.section1 {
+    height: 10%;
+    width: 550px; 
+    box-sizing: border-box; 
+}
+
+.section1 h1 {
+    font-size: 50px;
+    position: relative;
+}
+
+.section1 ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    height: 400px; 
+    overflow-y: scroll;
+    padding: 10px; 
+    list-style: none; 
+}
+
+.section1 ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 105px; 
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box; 
+}
+
+
+.section1 img {
+    width: 130px;
+    height: 170px;
+}
+
+.section2 {
+    height: 12%;
+    width: 300px;
+    display: grid;           
+    box-sizing: border-box; 
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+}
+
+.section2 form {
+    display: flex;      
+    flex-direction: column;
+    gap: 15pt;
+    align-items: center;
+    justify-content: center;
+}
+
+.section2 h2 {
+    margin-top: 120px;
+    position: relative;
+}
+
+main {
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    display: inline-flex;   
+    gap: 1px;                        
+    }
+
+input[type="text"]{
+    width: 320px;
+    height: 50px;
+    font-size: 20px;
+    border-style: outset;
+
+}
+
+@media (max-width: 900px) {
+    main {
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+
+    .section1, .section2 {
+        width: 80%; 
+        justify-content: center;
+}
+
+    .section2 h2 {
+        margin-top: 20px;
+    }
+
+
+    .section1 h1 {
+        text-align: center;
+    }
+
+}
+
+form button{
+    grid-row: 3;
+    grid-column: 1;
+    border-style: outset;
+    width: 90px;
+    height: 35px;
+    font-size: large;
+}
+
+form button:hover{
+    background-color: #D3D3D3;
+    cursor: pointer;
+}
+
+form button:active{
+    background-color: var(--cor-primaria);
+}
+
+li button {
+    background-color: transparent; 
+    border: none; 
+    padding: 0; 
+    margin-top: 5px;
+    font-size: 16px;
+    cursor: pointer; 
+    text-decoration: none; 
+}
+
+li button:hover {
+    color: var(--cor-primaria);
+}
+
+footer {
+    position: fixed; 
+    width: 100%; 
+    height: 7%; 
+    background-color: var(--cor-primaria); 
+    color: white; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    bottom: 0; 
+}

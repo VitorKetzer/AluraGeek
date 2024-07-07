@@ -1,0 +1,15 @@
+{
+  "name": "alurageek",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/VitorKetzer/AluraGeek"
+  },
+  "author": "Vitor",
+  "license": "ISC",
+  "description": ""
+}
