@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000/mangas';
+const apiUrl = '/mangas'; 
 
 function addManga() {
     const nomeInput = document.getElementById('nome');
@@ -6,24 +6,20 @@ function addManga() {
     const precoInput = document.getElementById('preco');
     let preco = precoInput.value.trim();
 
-    
     if (nome === '') {
         alert('Por favor, preencha o nome do mangá.');
         return;
     }
 
-    
     if (!/^[\d,]+$/.test(preco)) {
         alert('Por favor, insira um valor numérico para o preço.');
         return;
     }
 
-    
     preco = formatarPreco(preco);
 
     const img = document.getElementById('img').value.trim();
 
-    
     if (!isValidURL(img)) {
         alert('URL de imagem inválida.');
         return;
