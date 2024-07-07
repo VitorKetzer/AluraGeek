@@ -13,6 +13,7 @@ server.get('/', (req, res) => {
 });
 
 server.use(middlewares);
+
 server.use('/api', router);
 
 const PORT = process.env.PORT || 3000;
