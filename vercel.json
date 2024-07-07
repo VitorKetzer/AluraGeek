@@ -1,10 +1,10 @@
 {
   "version": 2,
   "builds": [
-    { "src": "src/package.json", "use": "@vercel/node" },
-    { "src": "src/index.html", "use": "@vercel/static-build" },
-    { "src": "src/custom.css", "use": "@vercel/static" },
-    { "src": "src/index.js", "use": "@vercel/node" }
+    { "src": "package.json", "use": "@vercel/node" },
+    { "src": "index.html", "use": "@vercel/static-build" },
+    { "src": "custom.css", "use": "@vercel/static" },
+    { "src": "index.js", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "src/index.html" }
