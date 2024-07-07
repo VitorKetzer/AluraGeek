@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000/mangas';
+const apiUrl = 'https://alura-geek-ten-lovat.vercel.app/mangas';
 
 
 function formatPrice(preco) {
