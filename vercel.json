@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "api/mangas.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/api/mangas", "dest": "api/mangas.js" }
+    ]
+  }
