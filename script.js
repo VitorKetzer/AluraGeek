@@ -1,4 +1,4 @@
-const apiUrl = 'https://alura-geek-psi-seven.vercel.app/mangas';
+const apiUrl = 'http://localhost:3000/mangas';
 
 
 function formatPrice(preco) {
